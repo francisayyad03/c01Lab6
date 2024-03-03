@@ -3,9 +3,15 @@ import { MongoClient, ObjectId } from "mongodb";
 import cors from "cors";
 
 const app = express();
+let mongoURL;
+if (process.env.ENV === 'Docker') {
+mongoURL = 'mongodb://mongodb:27017';
+} else {
+mongoURL = 'mongodb://127.0.0.1:27017';
+}
 const PORT = 4000;
-const mongoURL = "mongodb://127.0.0.1:27017";
 const dbName = "quirknotes";
+
 
 // Connect to MongoDB
 let db;
