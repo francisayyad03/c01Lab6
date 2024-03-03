@@ -12,7 +12,6 @@ mongoURL = 'mongodb://127.0.0.1:27017';
 const PORT = 4000;
 const dbName = "quirknotes";
 
-
 // Connect to MongoDB
 let db;
 
