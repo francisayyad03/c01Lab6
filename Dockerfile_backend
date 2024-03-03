@@ -1,0 +1,20 @@
+# Use the official Node.js image as the base image for frontend
+FROM node:20.0.0-alpine AS backend
+
+# Set the working directory for frontend
+WORKDIR /app/quirknotes/backend
+
+# Copy frontend source code
+COPY quirknotes/backend/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy frontend source code
+COPY quirknotes/backend ./
+
+# Expose port 4000
+EXPOSE 4000
+
+# Run docker command
+CMD ["npm", "run", "dev"]
