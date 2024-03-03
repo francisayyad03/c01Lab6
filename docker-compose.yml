@@ -11,6 +11,8 @@ services:
       - ENV=Docker
     depends_on:
       - mongodb
+
+
   frontend:
     build:
       context: .
